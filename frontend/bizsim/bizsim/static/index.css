@@ -1,0 +1,91 @@
+.content {
+    width: 100%;
+}
+
+.infoMain, .newCompanyContainer {
+    width: 80%;
+    clear: both;
+    margin: auto;
+}
+
+.informationProperty, .informationGeneral, .factoryOrders {
+    float: left;
+    margin: 20px;
+}
+
+.informationProperty {
+    width: 43%;
+}
+
+.informationGeneral {
+    width: 18%;
+}
+
+.companyInfo {
+    clear: both;
+}
+
+.industryInfo {
+    clear: both;
+}
+
+.propertyInfo {
+    clear: both;
+}
+
+.propertyInfoDiv h3 {
+    text-align: center;
+}
+
+.processRound {
+    clear: both;
+    display: block;
+    margin: 20px auto;
+    width: 400px;
+    text-align: center;
+}
+
+.factoryOrders {
+    width: 100%;
+}
+
+.factoryOrders form{
+    text-align: center;
+}
+
+.propertyInfoDiv {
+    float: left;
+    height: 225px;
+    width: 250px;
+    margin: 10px auto;
+    padding: 0px 5px;
+}
+
+.propertyInfo h2 {
+    text-align: center;
+}
+
+.propertyInfoDivContainer {
+    width: 520px;
+    height: 500px;
+    margin: 10px auto;
+}
+
+.orderContainer {
+    width: 28%;
+    float: right;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+td.label {
+    text-align: right;
+    font-weight: bold;
+    padding: 0px 5px;
+}

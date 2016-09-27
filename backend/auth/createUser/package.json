@@ -1,0 +1,10 @@
+{
+    "name": "createUser",
+    "version": "1.0.0",
+    "dependencies": { 
+        "async",
+        "aws-sdk",
+        "crypto",
+        "jsonwebtoken"
+    }
+}

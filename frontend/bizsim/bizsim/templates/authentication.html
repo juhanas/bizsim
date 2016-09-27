@@ -1,0 +1,34 @@
+{% block authentication %}
+{% if loginForm or newUserForm %}
+<div class="authContainer">
+    {% if loginForm %}
+    <div class="loginContainer">
+        <h2>Log in</h2>
+        <form method="post" action="">
+            {% csrf_token %}
+            <table>
+                {{loginForm.as_table}}
+            </table>
+            <input type="submit" name="login" value="Log in!"/>
+        </form>
+        <p id="loginMessage">{{loginMessage}}</p>
+    </div>
+    {% endif %}
+    {% if newUserForm %}
+    <div class="newUserContainer">
+        <h2>Create a new account</h2>
+        <p>Here you can create a new account. It is required in order to play the game. Please provide a unique username.</p> 
+        <form method="post" action="">
+            {% csrf_token %}
+            <table>
+                {{newUserForm.as_table}}
+            </table>
+            <input type="submit" name="register" value="Register!"/>
+        </form>
+        <p id="newUserMessage">{{newUserMessage}}</p>
+    </div>
+    {% endif %}
+    <p id="token" style="display:none;">{{token}}</p>
+</div>
+{% endif %}
+{% endblock %}

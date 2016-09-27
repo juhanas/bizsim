@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/static/index.css">
+<script type="text/javascript" src="static/javascript/functions.js" ></script>
+{% endblock %}
+
+{% block content %}
+<div class="infoMain">
+    <p>Welcome to BizSIM! Your task is to guide your company to high profits by buying factories and warehouses. Use these to produce and store your products, which you can then sell to the local market for the best price. But watch out, your competitors might sell cheaper!</p>
+</div>
+<div class="informationGeneral">
+    <div class="gameInfo">
+        <h2>Game info</h2>
+        <table>
+            <tr>
+                <td class="label">Name</td> <td id="id_gameName">{{game.Name}}</td>
+            </tr>
+            <tr>
+                <td class="label">Id</td> <td id="id_gameId">{{game.Id}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="companyInfo">
+        <h2>Company info</h2>
+        <table>
+            <tr>
+                <td class="label">Name</td> <td id="id_companyName">{{company.Name}}</td>
+            </tr>
+            <tr>
+                <td class="label">Id</td> <td id="id_companyId">{{company.ID}}</td>
+            </tr>
+            <tr>
+                <td class="label">Money</td> <td id="id_money">$<span class="value">{{company.Money}}</value></td>
+            </tr>
+            <tr>
+                <td class="label">Loans</td> <td id="id_loans">$<span class="value">{{company.Loans}}</value></td>
+            </tr>
+        </table>
+    </div>
+    <div class="industryInfo">
+        <h2>Industry info</h2>
+        <table>
+            <tr>
+                <td class="label">Name</td> <td id="id_industryName">{{industry.Name}}</td>
+            </tr>
+            <tr>
+                <td class="label">Demand</td> <td id="demand"><span class="value">{{industry.Demand}}</span> products/week</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="informationProperty">
+    <div class="propertyInfo">
+        <h2>Property info</h2>
+        <div class="propertyInfoDivContainer">
+            <div class="propertyInfoDiv">
+                <h3>Production</h3>
+                <table>
+                    <tr>
+                        <td class="label">Property Id</td> <td id="id_propertyId"><span class="value">{{property.ID}}</span></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Current production order</td> <td id="id_production"><span class="value">{{property.Production}}</span> products</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Factory production capacity</td> <td id="id_capacity"><span class="value">{{property.CapacityProduction}}</span> products</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Factory max capacity</td> <td id="id_capacityMax"><span class="value">{{property.CapacityMax}}</span> products</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Capacity change step</td> <td id="id_capacityChange"><span class="value">{{property.StepCapacityChange}}</span> products</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Selling price</td> <td id="id_price">$<span class="value">{{property.Price}}</span> / product</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="propertyInfoDiv">
+                <h3>Warehouse</h3>
+                <table>
+                    <tr>
+                        <td class="label">Products stored</td> <td id="id_stored"><span class="value">{{property.StoredItems}}</span> products</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Warehouse size</td> <td id="id_storageSize"><span class="value">{{property.WarehouseSize}}</span> products</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Warehouse max size</td> <td id="id_storageSizeMax"><span class="value">{{property.WarehouseSizeMax}}</span> products</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Warehouse change step</td> <td id="id_storageChangeStep"><span class="value">{{property.StepStorageChange}}</span> products</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="propertyInfoDiv">
+                <h3>Product Costs</h3>
+                <table>
+                    <tr>
+                        <td class="label">Fixed manufacturing costs</td> <td id="id_costManufacturingFixed">$<span class="value">{{property.CostFixed}}</span></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Variable manufacturing cost</td> <td id="id_costManufacturingVariable">$<span class="value">{{property.CostVariable}}</span> / product</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Fixed warehouse costs</td> <td id="id_costStorageFixed">$<span class="value">{{property.CostStorageFixed}}</span></td>
+                    </tr>
+                    <tr>
+                        <td class="label">Variable warehouse cost</td> <td id="id_costStorageVariable">$<span class="value">{{property.CostStorageVariable}}</span> / product</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="propertyInfoDiv">
+                <h3>Expansion Costs</h3>
+                <table>
+                    <tr>
+                        <td class="label">Production capacity increase</td> <td id="id_costCapacityIncrease">$<span class="value">{{property.CostCapacityIncrease}}</span> / step</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Production capacity decrease</td> <td id="id_costCapacityDecrease">$<span class="value">{{property.CostCapacityDecrease}}</span> / step</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Warehouse capacity increase</td> <td id="id_costStorageIncrease">$<span class="value">{{property.CostStorageIncrease}}</span> / step</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Warehouse capacity decrease</td> <td id="id_costStorageDecrease">$<span class="value">{{property.CostStorageDecrease}}</span> / step</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="orderContainer">
+    <div class="factoryOrders">
+        <h2>Factory orders</h2>
+        <p>Here you can give orders to your factory. The orders will be followed every round until they are 
+        changed.</p>
+        <form action="">
+            {% csrf_token %}
+            <input name="token" value="{{token}}" id="id_token" type="hidden">
+            <input name="companyId" value="{{company.ID}}" type="hidden">
+            <table>
+                {{orderForm.as_table}}
+            </table>
+            <input type="button" onclick="setOrders()" value="Confirm orders"/>
+        </form>
+        <p id="orderMessage"></p>
+        {{message}}
+    </div>
+    <div class="processRound">
+        <h2>Process round</h2>
+        <p>Processing the round passes 1 week of game time. All factories will produce as directed by 
+        their orders, after which all the items will be sold or stored as per the demand and production.</p>
+        <form action="/processround">
+            {% csrf_token %}
+            <input id="processRoundButton" type="submit" value="ProcessRound">
+        </form>
+        {{message}}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% block selectGame %}
+{% if games %}
+    <div class="selectGameContainer">
+        <h2>Select game</h2>
+        <p>Please select the game to enter.</p> 
+        {% csrf_token %}
+        <ul>
+            {% for game in games %}
+               <li><button name="{{game}}" onclick="/game">Game {{game}}</button></li>
+            {% endfor %}
+        </ul>
+        <p id="selectGameMessage">{{selectGameMessage}}</p>
+        <p id="token" style="display:none;">{{token}}</p>
+    </div>
+{% endif %}
+{% endblock %}

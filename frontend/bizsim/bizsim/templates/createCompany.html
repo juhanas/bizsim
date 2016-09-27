@@ -1,0 +1,17 @@
+{% block createCompany %}
+{% if createCompanyForm %}
+<div class="newCompanyContainer">
+    <h2>Create a new Company</h2>
+    <p>Here you can create a new company. Please provide a unique name for your company.</p> 
+    <form method="post" action="">
+        {% csrf_token %}
+        <input name="token" value="{{token}}" type="hidden">
+        <table>
+            {{createCompanyForm.as_table}}
+        </table>
+        <input type="submit" name="newcompany" value="Create your Company!"/>
+    </form>
+    <p id="createCompanyMessage">{{createCompanyMessage}}</p>
+</div>
+{% endif %}
+{% endblock %}

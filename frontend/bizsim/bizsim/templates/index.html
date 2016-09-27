@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/static/index.css">
+<script type="text/javascript" src="static/javascript/functions.js" ></script>
+{% endblock %}
+
+{% block content %}
+<div class="infoMain">
+    <p>Welcome to BizSIM! Your task is to guide your company to high profits by buying factories and warehouses. Use these to produce and store your products, which you can then sell to the local market for the best price. But watch out, your competitors might sell cheaper!</p>
+	<p>Start by creating a new company, or log in to manage your existing one.</p>
+</div>
+{% include 'authentication.html' %}
+{% include 'createCompany.html' %}
+{% include 'selectGame.html' %}
+{% endblock %}
